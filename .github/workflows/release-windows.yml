@@ -63,8 +63,8 @@ jobs:
         shell: pwsh
         run: |
           $artifacts = @(
-            Get-ChildItem -LiteralPath 'build/installer' -Filter 'Ytomp34-*-Setup.exe' -File
-            Get-ChildItem -LiteralPath 'build/installer' -Filter 'Ytomp34-*-Setup.exe.blockmap' -File
+            Get-ChildItem -LiteralPath 'build/installer' -Filter '*Setup.exe' -File
+            Get-ChildItem -LiteralPath 'build/installer' -Filter '*.blockmap' -File
             Get-Item -LiteralPath 'build/installer/latest.yml'
           ) | Sort-Object Name
           if ($artifacts.Count -ne 3) {
@@ -83,8 +83,8 @@ jobs:
         run: |
           $packageVersion = node -p "require('./package.json').version"
           $releaseFiles = @(
-            (Get-ChildItem -LiteralPath 'build/installer' -Filter 'Ytomp34-*-Setup.exe' -File).FullName
-            (Get-ChildItem -LiteralPath 'build/installer' -Filter 'Ytomp34-*-Setup.exe.blockmap' -File).FullName
+            (Get-ChildItem -LiteralPath 'build/installer' -Filter '*Setup.exe' -File).FullName
+            (Get-ChildItem -LiteralPath 'build/installer' -Filter '*.blockmap' -File).FullName
             (Resolve-Path -LiteralPath 'build/installer/latest.yml').Path
             (Resolve-Path -LiteralPath 'build/installer/SHA256SUMS.txt').Path
           )
