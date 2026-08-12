@@ -66,11 +66,10 @@ URL → yt-dlp → Audio + Video → FFmpeg → Một file hoàn chỉnh
 
 ## Nguồn
 
-Project này được phát triển dựa trên **Ytomp34** của **NTL0210**, aka **Giao Hợp Chân Nhân**.
+Project này được phát triển dựa trên **Ytomp34** của **NTL0210** [ :3 ].
 
 - **Original repository:** https://github.com/NTL0210/Ytomp34
 - **Original author:** [NTL0210](https://github.com/NTL0210)
-- **Nickname:** Giao Hợp Chân Nhân
 - **Derivative project:** Ytomp34[210]
 
 Ytomp34[210] giữ attribution của project gốc và các thành phần kế thừa cần tuân thủ license của repository gốc.
