@@ -1,0 +1,64 @@
+{
+  "name": "ytomp34",
+  "productName": "Ytomp34[210]",
+  "version": "1.2.1",
+  "private": true,
+  "description": "Ytomp34[210] — elegant desktop video downloader",
+  "main": "dist/electron/main/index.js",
+  "author": "Nguyen Tan Loc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NTL0210/Ytomp34.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:electron\"",
+    "dev:renderer": "vite",
+    "dev:electron": "tsc -p electron/tsconfig.json && electron ./dist/electron/main/index.js",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "build:win": "npm run build && npm run prepare:win-runtime && electron-builder --win dir --config electron-builder.json --publish never",
+    "build:installer": "npm run build && npm run prepare:win-runtime && electron-builder --win nsis --config electron-builder.json --publish never",
+    "test": "jest",
+    "test:electron-smoke": "electron ./scripts/electron-smoke.cjs",
+    "test:watch": "jest --watch",
+    "test:property": "jest --testPathPattern=property",
+    "lint": "eslint . --ext .ts,.tsx",
+    "prepare:win-runtime": "node scripts/prepare-windows-runtime.cjs"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "js-yaml": "4.3.0",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "42.7.1",
+    "electron-builder": "^26.15.3",
+    "eslint": "^8.56.0",
+    "fast-check": "^3.15.0",
+    "jest": "^29.7.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  }
+}

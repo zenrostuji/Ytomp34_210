@@ -1,0 +1,37 @@
+{
+  "appId": "com.ytomp34.app",
+  "productName": "Ytomp34[210]",
+  "directories": {
+    "output": "build/installer",
+    "buildResources": "assets"
+  },
+  "asar": false,
+  "files": [
+    "dist/electron/**/*",
+    "dist/renderer/**/*",
+    "package.json",
+    "assets/**/*"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "assets/icon.ico",
+    "artifactName": "${productName}-${version}-Setup.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "allowElevation": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Ytomp34[210]",
+    "installerIcon": "assets/icon.ico",
+    "uninstallerIcon": "assets/icon.ico",
+    "installerHeaderIcon": "assets/icon.ico",
+    "deleteAppDataOnUninstall": false
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "NTL0210",
+    "repo": "Ytomp34"
+  }
+}

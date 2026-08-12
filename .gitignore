@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+tmp-build/
+app-temp/
+app-extracted/
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test files
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# User data (will be created at runtime)
+userData/
+
+# Kiro internal (IDE-specific, not needed in repository)
+.kiro/
+
+# Development test scripts
+test-*.ps1
+debug-*.ps1
+final-*.ps1
+
+# Development reports
+*-SUMMARY.md
+*-REPORT.md
+!ANTI-BOT-FIXES-SUMMARY.md
+
+# PowerShell test scripts (optional - you may want to keep these)
+# test-*.ps1
+# debug-*.ps1
+# final-*.ps1
