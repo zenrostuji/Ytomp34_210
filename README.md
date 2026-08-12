@@ -47,6 +47,11 @@ Build Windows Installer:
 ```powershell
 npm run build:installer
 ```
+Build bản linux Mint để test:
+
+```powershell
+npm run build:deb 
+```
 
 ## Mục tiêu
 
